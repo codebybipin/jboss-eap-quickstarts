@@ -18,6 +18,8 @@
     pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="java.sql.*" %> 
+<%@ page import="java.io.*" %>
 <html>
 <head>
 <title>Corposoft</title>
@@ -25,7 +27,43 @@
 <!-- Here we include the css file  -->
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
 <head>
+    <% 
+try {
+    String host = System.getenv("MYSQL_SERVICE_HOST");
+    String port = System.getenv("MYSQL_SERVICE_PORT");
+    String user = System.getenv("MYSQL_USER");
+    String pwd = System.getenv("MYSQL_PASSWORD");
+    String dbname = System.getenv("MYSQL_DATABASE");
+    String databaseURL = "jdbc:mysql://";
+databaseURL += host;
+databaseURL += "/" + dbname;
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+Connection connection = DriverManager.getConnection(databaseURL, user,
+pwd);
+
+PreparedStatement selectCash = connection.prepareStatement("select * from user");
+ResultSet rs= selectCash.executeQuery();
+     
+    
+    
+%>
 <body>
+    <table>
+        <thead></thead>
+        <tbody>
+            <% while(rs.next()){ %>
+        <tr>
+            <td><%= rs.getString("id") %></td>
+            <td><%= rs.getString("name") %></td>
+            </tr>
+            
+        <% }%>
+        </tbody>
+    </table>
+   
+                 
+            
+    
     <div id="container">
         <div align="right" class="dualbrand">
             <img src="resources/gfx/rhjb_eap_logo.png" />
