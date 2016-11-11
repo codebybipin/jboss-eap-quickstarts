@@ -26,7 +26,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Here we include the css file  -->
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
-<head>
+</head>
     <% 
 try {
     String host = System.getenv("MYSQL_SERVICE_HOST");
@@ -47,6 +47,7 @@ ResultSet rs= selectCash.executeQuery();
     
     
 %>
+    
 <body>
     <table>
         <thead></thead>
@@ -57,7 +58,11 @@ ResultSet rs= selectCash.executeQuery();
             <td><%= rs.getString("name") %></td>
             </tr>
             
-        <% }%>
+        <% }
+        } catch (SQLException ex) {
+ }
+        
+        %>
         </tbody>
     </table>
    
