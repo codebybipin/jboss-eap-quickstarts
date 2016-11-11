@@ -54,7 +54,7 @@ ResultSet rs= selectCash.executeQuery();
         <tbody>
             <% while(rs.next()){ %>
         <tr>
-            <td><%= host+":"+user" %></td>
+            <td><%= host+":"+user %></td>
             <td><%= rs.getString("id") %></td>
             <td><%= rs.getString("name") %></td>
             </tr>
