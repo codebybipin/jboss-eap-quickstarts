@@ -35,7 +35,7 @@ try {
     String pwd = System.getenv("MYSQL_PASSWORD");
     String dbname = System.getenv("MYSQL_DATABASE");
     String databaseURL = "jdbc:mysql://";
-databaseURL += host;
+databaseURL += host+":3306";
 databaseURL += "/" + dbname;
 
 Connection connection = DriverManager.getConnection(databaseURL, user,
@@ -49,7 +49,30 @@ ResultSet rs= selectCash.executeQuery();
 %>
     
 <body>
-    <table>
+    <div id="container">
+        <div align="right" class="dualbrand">
+            <img src="resources/gfx/rhjb_eap_logo.png" />
+        </div>
+        <div id="content">
+            
+                 
+            
+    
+    
+
+            <!-- here we include the Registration Form in the template page
+   			using the jsp include directive 
+   			 -->
+
+            <%@ include file="registrationForm.jsp"%>
+
+
+            <!-- Statically inculde the Registration result at compilation time -->
+            <%@ include file="registrationResult.jsp"%>
+
+        </div>
+        <div id="aside">
+            <table>
         <thead></thead>
         <tbody>
             <% while(rs.next()){ %>
@@ -66,33 +89,8 @@ ResultSet rs= selectCash.executeQuery();
         %>
         </tbody>
     </table>
-   
-                 
+  
             
-    
-    <div id="container">
-        <div align="right" class="dualbrand">
-            <img src="resources/gfx/rhjb_eap_logo.png" />
-        </div>
-        <div id="content">
-
-            <!-- here we include the Registration Form in the template page
-   			using the jsp include directive 
-   			 -->
-
-            <%@ include file="registrationForm.jsp"%>
-
-
-            <!-- Statically inculde the Registration result at compilation time -->
-            <%@ include file="registrationResult.jsp"%>
-
-        </div>
-        <div id="aside">
-            <p>Warm Welcome to our services</p>
-            <ul>
-               <li><a href="https://access.redhat.com/site/documentation/JBoss_Enterprise_Application_Platform/">Documentation</a></li>
-               <li><a href="http://red.ht/jbeap-6">Product Information</a></li>
-            </ul>
 
         </div>
         <div id="footer">
