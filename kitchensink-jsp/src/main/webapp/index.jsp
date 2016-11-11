@@ -35,7 +35,7 @@ try {
     String pwd = System.getenv("MYSQL_PASSWORD");
     String dbname = System.getenv("MYSQL_DATABASE");
     String databaseURL = "jdbc:mysql://";
-databaseURL += host+":3306";
+databaseURL += host;
 databaseURL += "/" + dbname;
 
 Connection connection = DriverManager.getConnection(databaseURL, user,
@@ -62,8 +62,9 @@ ResultSet rs= selectCash.executeQuery();
             </tr>
             
         <% }
-        } catch (SQLException ex) {
- }
+        } catch (SQLException ex) { %>
+        <div>"Not working "+host</div>
+ <% }
         
         %>
         </tbody>
