@@ -49,29 +49,8 @@ ResultSet rs= selectCash.executeQuery();
 %>
     
 <body>
-    <div id="container">
-        <div align="right" class="dualbrand">
-            <img src="resources/gfx/rhjb_eap_logo.png" />
-        </div>
-        <div id="content">
-            
-                 
-            
     
-    
-
-            <!-- here we include the Registration Form in the template page
-   			using the jsp include directive 
-   			 -->
-
-            <%@ include file="registrationForm.jsp"%>
-
-
-            <!-- Statically inculde the Registration result at compilation time -->
-            <%@ include file="registrationResult.jsp"%>
-
-        </div>
-        <div id="aside">
+        <div >
             <table>
         <thead></thead>
         <tbody>
@@ -92,12 +71,7 @@ ResultSet rs= selectCash.executeQuery();
   
             
 
-        </div>
-        <div id="footer">
-            <p>
-                Expert Solutions to your business<br />
-            </p>
-        </div>
+       
     </div>
 </body>
 </html>
