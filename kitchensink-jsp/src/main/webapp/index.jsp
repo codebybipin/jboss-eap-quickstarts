@@ -37,7 +37,7 @@ try {
     String databaseURL = "jdbc:mysql://";
 databaseURL += host;
 databaseURL += "/" + dbname;
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
 Connection connection = DriverManager.getConnection(databaseURL, user,
 pwd);
 
