@@ -20,7 +20,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>kitchensink-jsp</title>
+<title>Corposoft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Here we include the css file  -->
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
@@ -44,7 +44,7 @@
 
         </div>
         <div id="aside">
-            <p>Learn more about Red Hat JBoss Enterprise Application Platform.</p>
+            <p>Welcome to Coporate Services</p>
             <ul>
                <li><a href="https://access.redhat.com/documentation/en/red-hat-jboss-enterprise-application-platform/">Documentation</a></li>
                <li><a href="http://www.redhat.com/en/technologies/jboss-middleware/application-platform">Product Information</a></li>
@@ -53,7 +53,7 @@
         </div>
         <div id="footer">
             <p>
-                This JBoss EAP quickstart project was generated from a Maven archetype.<br />
+                Expert Advice from experts for legal and accounts support for your business<br />
             </p>
         </div>
     </div>
