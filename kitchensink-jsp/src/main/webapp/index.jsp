@@ -35,6 +35,7 @@
     String pwd = System.getenv("MYSQL_PASSWORD");
     
     String databaseURL = "jdbc:mysql://";
+    host = "172.31.8.223";
 databaseURL += host;
 databaseURL += ":3306/" + dbname;
 Connection connection;
