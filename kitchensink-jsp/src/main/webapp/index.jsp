@@ -67,7 +67,8 @@ ResultSet rs= selectCash.executeQuery();
         <% }
         } catch (SQLException ex) {
         %>
-        <div>"host " <%= host %></div>
+        <div>host:  <%= host %></div>
+            <div>host:  <%= databaseURL %></div>
             
  <% }
         
