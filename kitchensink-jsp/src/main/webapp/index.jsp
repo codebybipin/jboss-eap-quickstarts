@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
 </head>
     <% 
-try {
+
     String host = System.getenv("MYSQL_SERVICE_HOST");
     String port = System.getenv("MYSQL_SERVICE_PORT");
     String user = System.getenv("MYSQL_USER");
@@ -37,8 +37,9 @@ try {
     String databaseURL = "jdbc:mysql://";
 databaseURL += host;
 databaseURL += "/" + dbname;
-
-Connection connection = DriverManager.getConnection(databaseURL, user,
+Connection connection;
+try {
+connection = DriverManager.getConnection(databaseURL, user,
 pwd);
 
 PreparedStatement selectCash = connection.prepareStatement("select * from user");
@@ -62,7 +63,8 @@ ResultSet rs= selectCash.executeQuery();
             </tr>
             
         <% }
-        } catch (SQLException ex) { %>
+        } catch (SQLException ex) {
+        %>
         <div>"Not working Dude " <%= databaseURL %></div>
  <% }
         
