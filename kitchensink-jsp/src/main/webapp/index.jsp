@@ -36,7 +36,7 @@
     
     String databaseURL = "jdbc:mysql://";
 databaseURL += host;
-databaseURL += "/" + dbname;
+databaseURL += ":3306/" + dbname;
 Connection connection;
 try {
 connection = DriverManager.getConnection(databaseURL, user,
