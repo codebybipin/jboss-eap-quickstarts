@@ -63,7 +63,7 @@ ResultSet rs= selectCash.executeQuery();
             
         <% }
         } catch (SQLException ex) { %>
-        <div>"Not working "<℅= databaseURL %></div>
+        <div>"Not working Dude " <%= databaseURL %></div>
  <% }
         
         %>
