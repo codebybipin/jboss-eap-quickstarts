@@ -28,12 +28,12 @@
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
 </head>
     <% 
-
+    String dbname = System.getenv("MYSQL_DATABASE");
     String host = System.getenv("MYSQL_SERVICE_HOST");
     String port = System.getenv("MYSQL_SERVICE_PORT");
     String user = System.getenv("MYSQL_USER");
     String pwd = System.getenv("MYSQL_PASSWORD");
-    String dbname = System.getenv("MYSQL_DATABASE");
+    
     String databaseURL = "jdbc:mysql://";
 databaseURL += host;
 databaseURL += "/" + dbname;
@@ -65,7 +65,11 @@ ResultSet rs= selectCash.executeQuery();
         <% }
         } catch (SQLException ex) {
         %>
-        <div>"Not working Dude " <%= databaseURL %></div>
+        <div>"host " <%= host %></div>
+            <div>"port " <%= port %></div>
+            <div>"user " <%= user %></div>
+            <div>"password " <%= pwd %></div>
+            <div>"database " <%= dbname %></div>
  <% }
         
         %>
