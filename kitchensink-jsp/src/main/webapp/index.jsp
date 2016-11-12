@@ -40,6 +40,7 @@ databaseURL += host;
 databaseURL += ":3306/" + dbname;
 Connection connection;
 try {
+Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(databaseURL, user,
 pwd);
 
